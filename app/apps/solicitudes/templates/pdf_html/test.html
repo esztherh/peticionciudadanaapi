@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Oficio Atención Ciudadana</title>
+		<meta name="description" content="Oficio Atención Ciudadana">
+		<meta name="author" content="Secretaría de Administración - Dirección de Soluciones Tecnológicas">
+
+		<style>
+			@page {
+				size: Letter;
+				margin: -0.2cm -0.2cm 3cm -0.2cm;
+				@bottom-left {
+					color: #808080;
+					content: 'Avenida 14 Oriente 1204, Barrio de El Alto, C.P. 72290 Puebla, Pue. Tel. (222) 2 13 88 00 extensión 1045 y 1046';
+					font-size: 10px;
+					margin-left: 2cm;
+					width: 7cm;
+				}
+			}
+
+			html {
+				font-family: arial;
+				font-size: 13px; }
+
+			html header {
+				margin: 0;
+			}
+
+			p {
+				line-height: 1.5;
+				text-align: justify;
+			}
+
+			.indent {
+				text-indent: 1.1cm;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<div style="z-index: 100; position: relative;">
+				<div style="z-index: 100; position: absolute; right: 1.5cm; top: 90px;">
+					<p style="color: #959595; font-weight: bold; margin: 5px 0;">Dirección de Atención Ciudadana</p>
+					<p style="color: #959595; font-weight: bold; margin: 5px 0;">De La Oficina Del C. Gobernador</p>
+				</div>
+				<img src="http://atencionciudadanaapi.puebla.gob.mx/static/apps/solicitudes/logo_oficio.png" alt="Logotipo Gobierno del Estado de Puebla" style="width:100%;position: absolute;">
+				{% comment %} <img src="{% static 'apps/solicitudes/logo_oficio.png' %}" alt="Logotipo Gobierno del Estado de Puebla" style="width:100%;position: absolute;"> {% endcomment %}
+			</div>
+		</header>
+		<main style="position: relative; top: 175px; margin: 0 3cm;">
+			<div style="margin-bottom: 1cm;">
+				<p style="text-align:right;">Puebla, Puebla; {{fecha_oficio|date}}</p>
+				<p style="text-align:right;">Folio No. {{numero_seguimiento}}</p>
+			</div>
+
+			<div style="margin: 1cm 0 1.2cm 0;">
+				<p style="margin: 0;"><strong>C. {{nombre_peticionario}}</strong></p>
+				<p style="margin: 0;"><strong>PRESENTE</strong></p>
+			</div>
+
+			<div>
+				<p class="indent">Reciba un cordial saludo y al mismo tiempo en atención a su petición recibida el {{fecha_de_escrito}} en las oficinas de ésta Dirección de Atención Ciudadana, se manifiesta lo siguiente:</p>
+				<p class="indent">En términos de lo dispuesto por los numerales 8 de la Constitución Política de los Estados Unidos Mexicanos, el artículo 138 de la Constitución Política del Estado de Puebla,  21 primer párrafo y fracción XII de la Ley Orgánica de la Administración Pública del Estado de Puebla vigente; se hace de su conocimiento que mediante número de Folio {{numero_seguimiento}} con número de seguimiento {{numero_seguimiento}} asignado por ésta Dirección, se turnó a {{dependencia}} para su atención y seguimiento correspondiente en el ámbito de su competencia.</p>
+				<p style="text-align:center">Sin otro particular, le reitero la seguridad de mi distinguida consideración.</p>
+			</div>
+
+			<div style="margin: 1.2cm 0 2cm 0;">
+				<p style="text-align:center; margin: 0;"><strong>A T E N T A M E N T E</strong></p>
+			</div>
+
+			<div style="margin: 2cm 0 0 0;">
+				<p style="text-align:center; margin: 0;"><strong>Jorge Alberto Benítez Samaniego</strong></p>
+				<p style="text-align:center; margin: 0;"><strong>Encargado de Despacho de la Dirección de</strong></p>
+				<p style="text-align:center; margin: 0;"><strong>Atención Ciudadana de la Oficina del C. Gobernador.</strong></p>
+			</div>
+
+
+
+			{% comment %} <div class="uk-padding-small bgc-rojo-8 margin-bottom">
+				<strong class="c-blanco uk-h3 uk-margin-remove">Datos de denuncia</strong>
+			</div> {% endcomment %}
+			{% comment %} <div class="margin-bottom">
+				<strong>Folio:</strong>
+				<p>{{ complaint.code }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>Fecha de presentación:</strong>
+				<p>{{ complaint.created_at|date }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>Hora de presentación:</strong>
+				<p>{{ complaint.created_at|time:"H:i:s" }}</p>
+			</div>
+			<div class="uk-padding-small bgc-rojo-8 margin-bottom">
+				<strong class="c-blanco uk-h3 uk-margin-remove">Datos del servidor público denunciado</strong>
+			</div>
+			<div class="margin-bottom">
+				<strong>Nombre:</strong>
+				<p>{{ complaint.person_name }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>Cargo:</strong>
+				<p>{{ complaint.company_charge }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>Descripción física:</strong>
+				<p>{{ complaint.physical_description }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>Sexo:</strong>
+				<p>{{ complaint.gender }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>Dependencia donde se brindó la atención:</strong>
+				<p>{{ complaint.dependence }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>Municipio donde ocurrieron los hechos:</strong>
+				<p>{{ complaint.municipality }}</p>
+			</div> {% endcomment %}
+			<!--<div class="margin-bottom">
+				<strong>Narración de los hechos:</strong>
+				<p>{{ complaint.description }}</p>
+			</div>-->
+			{% comment %} <div class="margin-bottom">
+				<strong>Archivos adjuntos:</strong>
+				{% for file in files_complaints %}
+					<p>{{ file }}</p>
+				{% endfor %}
+			</div>
+			<div class="uk-padding-small bgc-rojo-8 margin-bottom">
+				<strong class="c-blanco uk-h3 uk-margin-remove">Datos del denunciante</strong>
+			</div>
+			<div class="margin-bottom">
+				<strong>Tipo:</strong>
+				<p>{{ complaint.informer_type }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>Edad:</strong>
+				<p>{{ complaint.informer_age }}</p>
+			</div>
+			{% if complaint.informer_type_id != 1 %}
+				<div class="margin-bottom">
+					<strong>Nombre:</strong>
+					<p>{{ complaint.informer_name }}</p>
+				</div>
+				<div class="margin-bottom">
+					<strong>Teléfono:</strong>
+					<p>{{ complaint.informer_phone }}</p>
+				</div>
+			{% endif %}
+			<div class="margin-bottom">
+				<strong>Correo electrónico:</strong>
+				<p>{{ complaint.informer_email }}</p>
+			</div>
+			<div class="margin-bottom">
+				<strong>La persona servidora pública que denuncias:</strong>
+				<p>{{ complaint.informer_reason_str }}</p>
+			</div>
+			<div class="uk-padding-small bgc-rojo-8 margin-bottom">
+				<strong class="c-blanco uk-h3 uk-margin-remove">Seguimiento de la denuncia</strong>
+			</div>
+			<div class="margin-bottom">
+				<strong>Estatus:</strong>
+				<p>{{ complaint.status }}</p>
+			</div>
+			<div class="margin-bottom">
+				{% for file in files_tracking %}
+					<div class="margin-bottom"><strong>Remitido a:</strong></div>
+					<div class="margin-left">
+						<div class="margin-bottom">
+							<strong>Autoridad a la que fue remitida:</strong>
+							<p>{{ file.tracking_authority_referred }}</p>
+						</div>
+						<div class="margin-bottom">
+							<strong>Número de oficio:</strong>
+							<p>{{ file.tracking_legal_number }}</p>
+						</div>
+						<div class="margin-bottom">
+							<strong>Domicilio:</strong>
+							<p>{{ file.tracking_address }}</p>
+						</div>
+						<div class="margin-bottom">
+							<strong>Teléfono:</strong>
+							<p>{{ file.tracking_phone }}</p>
+						</div>
+						<div class="margin-bottom">
+							<strong>Archivo adjunto:</strong>
+							<p>{{ file }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="margin-bottom">
+				<strong>Motivo de la denuncia:</strong>
+				<p>{{ complaint.reason }}</p>
+			</div> {% endcomment %}
+		</main>
+	</body>
+</html>

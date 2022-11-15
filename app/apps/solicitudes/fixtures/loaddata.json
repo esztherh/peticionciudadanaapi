@@ -1,0 +1,151 @@
+[
+	{
+		"model": "solicitudes.Status_Seguimiento",
+		"pk": 1,
+		"fields": {
+			"status": "En Proceso",
+			"is_main": 1,
+            "is_end": 0,
+			"color": "#6aa84f",
+			"icono": "#",
+			"belongs_to": [2]
+		}
+	},
+	{
+		"model": "solicitudes.Status_Seguimiento",
+		"pk": 2,
+		"fields": {
+			"status": "Canalizado a Dirección",
+			"color": "#e69138",
+			"icono": "#",
+			"system_status": 1,
+			"belongs_to": [2]
+		}
+	},
+	{
+		"model": "solicitudes.Status_Seguimiento",
+		"pk": 3,
+		"fields": {
+			"status": "En Proceso",
+			"is_main": 1,
+            "is_end": 0,
+			"color": "#3d85c6",
+			"icono": "#",
+			"belongs_to": [1,3]
+		}
+	},
+	{
+		"model": "solicitudes.Status_Seguimiento",
+		"pk": 4,
+		"fields": {
+			"status": "Canalizado a Enlace",
+			"color": "#e69138",
+			"icono": "#",
+			"system_status": 1,
+			"belongs_to": [1,3]
+		}
+	},
+	{
+		"model": "solicitudes.Status_Seguimiento",
+		"pk": 5,
+		"fields": {
+			"status": "Concluido",
+			"color": "#6aa84f",
+			"icono": "#",
+			"belongs_to": [2]
+		}
+	},
+	{
+		"model": "solicitudes.Status_Seguimiento",
+		"pk": 8,
+		"fields": {
+			"status": "Concluido",
+			"color": "#6aa84f",
+			"icono": "#",
+			"belongs_to": [1,3]
+		}
+	},
+
+
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 1,
+		"fields": {
+			"main_status": 1,
+			"change_status": 2,
+			"belongs_to": 2
+		}
+	},
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 2,
+		"fields": {
+			"main_status": 1,
+			"change_status": 5,
+			"belongs_to": 2
+		}
+	},
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 5,
+		"fields": {
+			"main_status": 2,
+			"change_status": 5,
+			"belongs_to": 2
+		}
+	},
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 8,
+		"fields": {
+			"main_status": 3,
+			"change_status": 4,
+			"belongs_to": 1
+		}
+	},
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 9,
+		"fields": {
+			"main_status": 3,
+			"change_status": 8,
+			"belongs_to": 1
+		}
+	},
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 10,
+		"fields": {
+			"main_status": 4,
+			"change_status": 8,
+			"belongs_to": 1
+		}
+	},
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 11,
+		"fields": {
+			"main_status": 3,
+			"change_status": 4,
+			"belongs_to": 3
+		}
+	},
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 12,
+		"fields": {
+			"main_status": 3,
+			"change_status": 8,
+			"belongs_to": 3
+		}
+	},
+	{
+		"model": "solicitudes.Change_Status_Seguimiento",
+		"pk": 13,
+		"fields": {
+			"main_status": 4,
+			"change_status": 8,
+			"belongs_to": 3
+		}
+	}
+]
